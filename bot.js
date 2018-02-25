@@ -5,6 +5,7 @@ client.on('ready', () => {
     console.log('RedKatCode, connected and working. ');
 
            client.user.setPresence({ status: 'idle', game: { name: "%SQL STAUS: BAD" } });
+    client.startTyping(channel, callback)
 });
 
 
