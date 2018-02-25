@@ -5,7 +5,11 @@ client.on('ready', () => {
     console.log('RedKatCode, connected and working. ');
 
            client.user.setPresence({ status: 'idle', game: { name: "%SQL STAUS: BAD" } });
-    client.startTyping(channel, callback)
+    const channel = message.member.voiceChannel;
+
+    channel.join()
+    .then(connection => console.log('Connected!'))
+    .catch(console.error);
 });
 
 
