@@ -5,11 +5,7 @@ client.on('ready', () => {
     console.log('RedKatCode, connected and working. ');
 
            client.user.setPresence({ status: 'idle', game: { name: "%SQL STAUS: BAD" } });
-    const channel = message.member.voiceChannel;
-
-    channel.join()
-    .then(connection => console.log('Connected!'))
-    .catch(console.error);
+    
 });
 
 
@@ -39,6 +35,14 @@ client.on('message', message => {
           	}
 });
 
+client.on('message', message => {
+    if (message.content === '?test') {
+        message.channel.send('Connecting');
+        const channel = message.member.voiceChannel;
+
+    channel.join()
+    .then(connection => console.log('Connected!'))
+    .catch(console.error);
 
 // Input into config VARS for the token to connect. 
 
